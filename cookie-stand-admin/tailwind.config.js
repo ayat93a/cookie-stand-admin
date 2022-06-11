@@ -14,11 +14,11 @@ module.exports = {
     },
     extend: {
       colors: {
-        'Neutral': '#E4E7E9',
-        'Purple':'#7F6B8D',
+        'Neutral': '#F6F4F2',
+        'Purple':'#DF3062',
         'Blue' : '#323E74',
         'Nude' : '767C76',
-        'purple-light':'#C0A9BD',
+        'purple-light':'#425664',
 
       },
     },

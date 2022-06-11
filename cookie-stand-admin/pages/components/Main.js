@@ -1,30 +1,33 @@
 
-function Main({questionAskedHandler}) {
-  return (
-    <div className="box-content relative w-2/5 mx-auto rounded-lg h-60 my-18 bg-Neutral ">
-      <form onSubmit={questionAskedHandler} className = 'flex w-1/2 p-2 mx-auto mt-6 Purple'>
-       
-          <label for = 'question-1' className= 'absolute left-5 '>Location</label>
-          <input name = 'question-1' className="absolute top-0 left-0 rounded-lg grow"  type={'text'} placeholder ={'Add a Location' } ></input>
-          <br/>
-  
-          <label for = 'minimum_custumr' className= 'absolute inset-y-0 left-5'>Minimum Customers per Hour</label>
-          <input name = 'question-1' className="rounded-lg grow"  type={'text'} placeholder ={'Min Customers per Hour' } ></input>
-        
-       
-          <label for = 'maximum_custumr' className= 'absolute left-5'>Maximum Customers per Hour</label>
-          <input name = 'question-1' className="rounded-lg grow"  type={'text'} placeholder ={'Max Customers per Hour' } ></input>
-        
-          
-          <label for = 'avg-cookie' className= 'absolute left-5'>Average Cookies per Sale</label>
-          <input name = 'question-1' className="rounded-lg grow"  type={'text'} placeholder ={'Average Cookies per Sale' } ></input>
-         
-         
-          <button className="px-4 py-2 ml-2 bg-gray-400 rounded-full text-gray-50 ">Ask</button>
-        
 
+function Main(props) {
+  return (
+    <>
+    <div className="w-4/5 mx-auto rounded-lg h-60 bg-Neutral">
+      <form onSubmit={props.eventHandler} className = 'relative p-5 mt-6'>
+      <h1 className="mb-6 text-2xl text-center text-Purple ">Create Cookie Stand</h1>
+       
+          <label name = 'location' className= 'p-5 text-Purple'>Location</label>
+          <input  value={props.reply.location} onChange={props.eventHandler} name = 'question-1' className="w-5/6 mb-8 rounded-lg absoulte grow placeholder:p-3"  type={'text'} placeholder ={'Add a Location' } ></input>
+          <br/>
+          
+            <label name = 'min' className= 'p-6 text-Purple '>Minimum Customers per Hour</label>
+            <label name= 'max' className= 'p-6 text-Purple '>Maximum Customers per Hour</label>
+            <label neme = 'avg' className= 'p-6 text-Purple '>Average Cookies per Sale</label>
+            <button className="absolute w-1/4 py-4 ml-3 text-4xl text-center rounded-lg top-17 bg-purple-light hover:bg-Purple text-Neutral">Ask</button>
+            <br/>
+            <input value={props.reply.min} onChange={props.eventHandler} name = 'question-min' className="mt-2 ml-4 rounded-lg placeholder:text-center"  type={'text'} placeholder ={'Min Customers per Hour' } ></input>
+            <input value={props.reply.max} onChange={props.eventHandler} name = 'question-max' className="mt-2 rounded-lg ml-7 placeholder:text-center"  type={'text'} placeholder ={'Max Customers per Hour' } ></input>
+            <input value={props.reply.avg} onChange={props.eventHandler} name = 'question-avg' className="mt-2 rounded-lg ml-7 placeholder:text-center"  type={'text'} placeholder ={'Average Cookies per Sale' } ></input>
       </form>
     </div>
+
+    <div>
+      <p className="mt-5 text-center text-Purple "> Report Table Comming Soon... </p>
+      {/* <p className="mt-5 text-center text-Purple">{props.reply.location} </p> */}
+    </div>
+
+    </>
   )
 }
 
